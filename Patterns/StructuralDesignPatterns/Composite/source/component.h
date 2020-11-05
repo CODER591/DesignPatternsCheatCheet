@@ -12,6 +12,7 @@
  * 
  * 
  * */
+class Composite;
 class Component {
 	public:
 		//lets imagine that we have here the whole interface for leafs
@@ -28,6 +29,7 @@ class Component {
 		virtual void removeElement(Component* component_p) {}
 		virtual Component* getElement( size_t index) { return nullptr; }
 		virtual void DoSomethingWithEveryOne() {}
+		virtual Composite* GetComposite(){ return nullptr;}
 		
 };
 

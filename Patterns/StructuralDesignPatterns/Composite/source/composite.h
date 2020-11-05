@@ -53,7 +53,7 @@ class Composite : public Component {
 			   (*iter)->DoSomething();
 		    }
 		}
-
+		virtual Composite* GetComposite(){ return this;}
 };
 
 
