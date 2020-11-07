@@ -20,7 +20,7 @@ class Component {
 		Component () {
 		   std::cout<<"Component_created by default ctor"<<std::endl;
 		}
-		~Component () {
+		virtual ~Component () {
 			std::cout<<"Component_destructed"<<std::endl;
 		}
 		virtual void DoSomethingForComponent(Component* component_p) {}	

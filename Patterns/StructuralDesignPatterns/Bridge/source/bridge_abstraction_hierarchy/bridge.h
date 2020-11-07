@@ -37,14 +37,13 @@
 #include "../bridge_impl_hierarchy/abstract_product_impl.h"
 
 
-
-
 class AbstractProduct {
 	protected:
 		AbstractProductImpl * impl_;
 	public:
-	AbstractProduct(AbstractProductImpl * object): impl_(object) {}
-	virtual void doingSomething() = 0 ;
+	   AbstractProduct(AbstractProductImpl * object): impl_(object) {}
+	   virtual void doingSomething() = 0 ;
+	   virtual ~AbstractProduct(){}
 
 };
 

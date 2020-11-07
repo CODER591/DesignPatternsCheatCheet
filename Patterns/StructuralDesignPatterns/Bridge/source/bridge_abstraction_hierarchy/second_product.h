@@ -6,10 +6,7 @@
  * 
  * */
 
-
 #include "../bridge_impl_hierarchy/abstract_product_impl.h"
-
-
 
 
 class SecondProduct: public AbstractProduct {

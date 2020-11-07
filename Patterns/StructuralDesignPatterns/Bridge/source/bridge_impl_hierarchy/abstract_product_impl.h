@@ -11,7 +11,8 @@
 
 class AbstractProductImpl {
 	public:
-		AbstractProductImpl(){}
+		AbstractProductImpl() {}
+		virtual ~AbstractProductImpl() {}
 		virtual void firstMethod() = 0;
 		virtual void secondMethod() = 0;
 

@@ -18,7 +18,7 @@ class SecondProductImpl: public AbstractProductImpl {
 		void firstMethod() override {
 		  std::cout <<"SecondProductImpl firstMethod isCalled" <<std::endl;
 		}
-                void secondMethod() override {
+        void secondMethod() override {
 		  std::cout <<"SecondProductImpl secondMethod isCalled" <<std::endl;
 		}
 

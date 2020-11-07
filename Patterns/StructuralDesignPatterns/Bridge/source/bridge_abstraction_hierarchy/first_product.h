@@ -6,13 +6,7 @@
  * 
  * */
 
-
-
-
 #include "../bridge_impl_hierarchy/abstract_product_impl.h"
-
-
-
 
 class FirstProduct: public AbstractProduct {
 
@@ -25,9 +19,8 @@ class FirstProduct: public AbstractProduct {
 		 * calling impl_ method in different order
 		 * just to "simulate" "different" behaviour
 		 */
-             impl_->firstMethod();
-             impl_->secondMethod();
-
+         impl_->firstMethod();
+         impl_->secondMethod();
 	}
 
 };

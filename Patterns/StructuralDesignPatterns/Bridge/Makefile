@@ -1,7 +1,8 @@
+CC=g++ -Wall
 
 all:
 	mkdir -p bin/
-	g++ source/main.cpp
+	$(CC) source/main.cpp
 	mv *.out bin/
 
 clean:
