@@ -24,27 +24,27 @@ class AbstractProduct {
 		std::vector<int>some_values_;
 		std::string str_;
 	public:
-		AbstractProduct(const std::vector<int>& values,const std::string & streng ):some_values_(values), str_(streng) {
+		AbstractProduct(const std::vector<int>& values, const std::string & streng):some_values_(std::move(values)), str_(std::move(streng)){
 		}
+		
 		// we suspect everywhere apropriate constructors call
 		AbstractProduct(const AbstractProduct & product) { 
-		 some_values_ = product.some_values_;
-		 str_ = product.str_;
+		   some_values_ = product.some_values_;
+		   str_ = product.str_;
 		}
 
 		AbstractProduct(const AbstractProduct * product) {
-                 some_values_ = product->some_values_;
-                 str_ = product->str_;
-                }
+           some_values_ = product->some_values_;
+           str_ = product->str_;
+        }
 		AbstractProduct(AbstractProduct && product) {
-                 some_values_ = std::move(product.some_values_);
-                 str_ = std::move(product.str_);
-                }
+           some_values_ = std::move(product.some_values_);
+           str_ = std::move(product.str_);
+        }
 
 		virtual AbstractProduct* Clone() = 0;
 
-
-
+		virtual ~AbstractProduct(){}
 
 };
 

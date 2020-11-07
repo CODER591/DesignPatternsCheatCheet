@@ -1,5 +1,5 @@
 
-CC=g++
+CC=g++ -Wall
 
 all: main.cpp
 	mkdir -p bin/

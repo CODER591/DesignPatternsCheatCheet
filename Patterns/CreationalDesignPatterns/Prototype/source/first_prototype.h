@@ -23,16 +23,16 @@ class FirstProduct: public AbstractProduct {
 	private:
            std::list<int> my_list_;
 	public:
-	        FirstProduct(const std::list<int>& list, const std::vector<int>& values,const std::string & streng ):my_list_(list),AbstractProduct(values,streng) {
-
+	    FirstProduct(const std::list<int>& list, const std::vector<int>& values, const std::string & streng):AbstractProduct(values,streng), my_list_(std::move(list)) {
 		}
+		
 		FirstProduct(const FirstProduct & product): AbstractProduct(product) {
 			my_list_ = product.my_list_;
 		}
 
 		FirstProduct(const FirstProduct * product): AbstractProduct(product) {
-                        my_list_ = product->my_list_;
-                }
+            my_list_ = product->my_list_;
+        }
 
 		virtual AbstractProduct* Clone() override {
 			return new FirstProduct(this);

@@ -28,7 +28,7 @@ class ObjectPool {
 	  }
 	  void setPoolCapacity(unsigned int current_capacity) {
              capacity_ = current_capacity;
-	     for(int i =0; i<capacity_; i++){
+	     for(unsigned int i = 0; i < capacity_; i++){
 	       free_objects_.push_back(new Product);
 	     }
 	  }
