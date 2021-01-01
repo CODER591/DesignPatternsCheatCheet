@@ -22,7 +22,8 @@ class FlyweightFactory {
        static FlyweightFactory nice;
        return nice;
      }
-     /* They also could be allocated on a stack. But there we should consider move semantaics.*/
+     /* Objects also could be allocated on a stack.
+     In case of stack allocation we should use move semantaics. */
      HardObject* makeOrGetHardObject(int cool_number/* some parameters */) {
        for(unsigned int indexer = 0; indexer < object_pool_.size(); indexer++) {
          // Integer is here only for simplest example.
