@@ -1,9 +1,11 @@
 #ifndef FLYWEIGHT_FACTORY_H
 #define FLYWEIGHT_FACTORY_H
+
 //Flyweight factory should be and act like a object pool.
 /*
    Actually ObjectPool pattern and Flyweight are similar, but:
-   1.The main difference is that Flyweight resources are IMMUTABLE and the Object pool are MUTABLE.
+   The main difference is that Flyweight resources are IMMUTABLE and the Object pool are MUTABLE.
+   (The Object Pool objects should be resetted to the after returning to the Pool)
    In the Object pool, at any given moment the object can be accessed only for one client,
    in Flyweight many clients can simultaneously use the same object.
 */
