@@ -5,10 +5,10 @@
 #include "contexts.h"
 
 int main() {
-  ClientComposition client(StrategyChoice::FIRST);
+  ContextComposition client(StrategyChoice::FIRST);
   client.DoWorkWithChosenStrategy();
-  FirstStrategy strategy;
-  ClientAggregation client_agg(&strategy);
+  SecondStrategy strategy;
+  ContextAggregation client_agg(&strategy);
 
   client_agg.DoWorkWithChosenStrategy();
 

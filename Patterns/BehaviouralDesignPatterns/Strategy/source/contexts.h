@@ -17,7 +17,7 @@ class ContextComposition {
            break;
       }
     }
-    ~ClientComposition() {
+    ~ContextComposition() {
       delete strategy_;
     }
     void DoWorkWithChosenStrategy() {
@@ -30,8 +30,7 @@ class ContextAggregation {
   private:
     AbstractStrategy * strategy_; //aggregation
   public:
-
-    ContextAggregation(AbstractStrategy & strategy):strategy_(nullptr) {
+    ContextAggregation(AbstractStrategy * strategy):strategy_(strategy) {
     }
 
     void DoWorkWithChosenStrategy() {
