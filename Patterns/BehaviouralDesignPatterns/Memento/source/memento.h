@@ -14,9 +14,45 @@ class Memento {
   public:
     Memento (MementoState state):state_(state) {}
     Memento ():state_(MementoState::NONE) {}
-    
-    Memento getState(){
+    Memento (const Memento & object_to_copy) {
+      state_ = object_to_copy.state_;
+    }
+    void ChangeMementoState() {
+      switch (state_){
+        case MementoState::NONE:
+             state_ = MementoState::FIRST;
+             break;
+        case MementoState::FIRST:
+             state_ = MementoState::SECOND;
+             break;
+        case MementoState::SECOND:
+             state_ = MementoState::THIRD;
+             break;
+        case MementoState::THIRD:
+             state_ = MementoState::NONE;
+             break;
+      }
+    }
+    Memento getState() const {
       return *this;
+    }
+
+    /* Only for demo */
+    void PrintState() {
+      switch (state_){
+        case MementoState::NONE:
+             std::cout<<"MementoState::NONE:\n";
+             break;
+        case MementoState::FIRST:
+             std::cout<<"MementoState::FIRST:\n";
+             break;
+        case MementoState::SECOND:
+             std::cout<<"MementoState::SECOND:\n";
+             break;
+        case MementoState::THIRD:
+             std::cout<<"MementoState::THIRD:\n";
+             break;
+      }
     }
 
 };

@@ -7,18 +7,30 @@
 
 class Caretaker {
    public:
-     Caretaker (const Memento & memento_object):originator_(memento_object){}
      Caretaker () = default;
 
-     void DoSomething(const Memento & object) {
-       originator_.Save(object);
-       history_.push(object);
+     void DoSomeCoolStaff() {
+       originator_.DoSomething();
+     }
+
+     void MakeBackup() {
+       history_.push(originator_.Save());
      }
      void Undo() {
+       if(!history_.size())
+          return;
+
        Memento tmp = history_.top();
        history_.pop();
        originator_.Restore(tmp);
      }
+
+     /* Only for demo */
+     void PrintState() {
+       originator_.PrintState();
+     }
+
+
    private:
      Originator originator_; //Memento manager. Represent current state.
      std::stack<Memento> history_; // only straight-forward history. No middle access;

@@ -3,15 +3,18 @@
 #include "caretaker.h"
 
 int main() {
-  //create some Mementos here
   //Client code
-  Memento first(MementoState::FIRST);
-  Memento second(MementoState::NONE);
-  Memento third(MementoState::SECOND);
   Caretaker caretaker;
-  caretaker.DoSomething(first);
-  caretaker.DoSomething(second);
-  caretaker.Undo();
+  caretaker.PrintState(); //  no entries -> print nothing
+  caretaker.DoSomeCoolStaff();
+  caretaker.MakeBackup();
+  caretaker.PrintState(); //  first
+  caretaker.DoSomeCoolStaff();
+  caretaker.MakeBackup();
+  caretaker.PrintState(); //  second
+  caretaker.Undo();       //  first
+  caretaker.Undo();       //  no entries -> print nothing
+  caretaker.PrintState(); //  no entries -> print nothing
 
 
   return 0;
