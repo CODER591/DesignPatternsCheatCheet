@@ -11,11 +11,11 @@ int main() {
   FirstTypeVisitor visitorFirstType;
   SecondTypeVisitor visitorSecondType;
 
-  first_type_element.AcceptFirstTypeVisitor(visitorFirstType);
-  first_type_element.AcceptSecondTypeVisitor(visitorSecondType);
+  first_type_element.Accept(visitorFirstType);
+  first_type_element.Accept(visitorSecondType);
 
-  second_type_element.AcceptFirstTypeVisitor(visitorFirstType);
-  second_type_element.AcceptSecondTypeVisitor(visitorSecondType);
+  second_type_element.Accept(visitorFirstType);
+  second_type_element.Accept(visitorSecondType);
 
   return 0;
 }

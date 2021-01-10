@@ -8,17 +8,13 @@
 class AbstractElement {
  public:
    AbstractElement() = default;
-   virtual void AcceptFirstTypeVisitor(FirstTypeVisitor& visitor) = 0;
-   virtual void AcceptSecondTypeVisitor(SecondTypeVisitor& visitor) = 0;
+   virtual void Accept(AbstractVisitor& visitor) = 0;
 };
 
 class FirstTypeElement : public AbstractElement {
  public:
    FirstTypeElement() = default;
-   void AcceptFirstTypeVisitor(FirstTypeVisitor& visitor) {
-     visitor.VisitFirstTypeElement(this);
-   }
-   void AcceptSecondTypeVisitor(SecondTypeVisitor& visitor) {
+   void Accept(AbstractVisitor& visitor) {
      visitor.VisitFirstTypeElement(this);
    }
 };
@@ -27,13 +23,9 @@ class SecondTypeElement : public AbstractElement {
  public:
 
    SecondTypeElement() = default;
-   void AcceptFirstTypeVisitor(FirstTypeVisitor& visitor) {
+   void Accept(AbstractVisitor& visitor) {
      visitor.VisitSecondTypeElement(this);
    }
-   void AcceptSecondTypeVisitor(SecondTypeVisitor& visitor) {
-     visitor.VisitSecondTypeElement(this);
-   }
-
 };
 
 #endif /* end of include guard:  ELEMENT_H */
