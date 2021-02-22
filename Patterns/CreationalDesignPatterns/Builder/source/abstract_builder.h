@@ -19,7 +19,7 @@ class AbstractBuilder {
 		virtual void buildFirstPart() = 0;
 		virtual void buildSecondPart() = 0;
 		virtual void buildThirdPart() = 0;
-		virtual Product&& getResult() {
+		virtual Product getResult() {
 			return std::move(prod_instance_);
 		}
 

@@ -21,7 +21,7 @@ class Director {
 		}
 		Director(AbstractBuilder * builder):builder_(builder) {}
 
-		Product&& buildSomething() {
+		Product buildSomething() {
 			builder_->buildFirstPart();
 			builder_->buildSecondPart();
 			builder_->buildThirdPart();
